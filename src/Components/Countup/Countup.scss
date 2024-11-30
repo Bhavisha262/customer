@@ -1,0 +1,71 @@
+
+
+.countup-main{
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+flex-wrap: wrap;
+padding: 10px;
+height: max-content;
+background-image: url("../../Assets/Countup/2303.w018.n002.1748B.p15.1748.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+font-size: 18px;
+font-weight: bold;
+font-family: "Playfair Display", serif;
+
+
+
+
+.vegan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   color:lightpink;
+   flex-direction: column;
+   padding-top: 10px;
+
+    .counting{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    }
+}
+
+.awards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lemonchiffon;
+    flex-direction: column;
+    padding-top: 10px;
+
+    .counting1{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    }
+}
+.people{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: cyan;
+    flex-direction: column;
+    padding-top: 10px;
+
+    .counting2{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+   flex-direction: column;
+   gap: 5px;
+        
+    }
+}
+
+}
