@@ -42,7 +42,7 @@ const Footer = () => {
            <Link/>
           </div>
         </div>
-       <img src={mp4} alt='' width={200} height={100}/>
+
       </div>
       <div className="footer__bottom">
         <p>
