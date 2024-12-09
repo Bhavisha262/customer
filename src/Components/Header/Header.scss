@@ -16,6 +16,11 @@
 
   /* Footer-like Background */
   background: linear-gradient(135deg, #00005A,#00005B );
+
+  .menu{
+    display: none;
+       cursor: pointer;
+  }
   a {
     color: cyan;
     text-decoration: none;
@@ -54,10 +59,10 @@
     z-index: -1;
   }
 
-  &__logo {
+  .header__logo {
     font-size: 1.5rem;
     font-weight: bold;
-    
+   
     img {
       width: 300px;
       margin-right: 1.5rem;
@@ -123,31 +128,164 @@
 }
 
 // Keyframes for the background slide animation
+.menu_li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+  width: 80%; // Ensure the parent spans the full width
+
+  li {
+    position: relative;
+    padding: 18px 30px;
+    background: linear-gradient(135deg, #00005A, #00005B);
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; // Each <li> will take the full width of the parent
+    max-width: 400px; // Optional: Set a maximum width for consistency
+    margin: 0 auto; // Center <li> elements within the parent container
+
+    // Wavy background sweep effect
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+      z-index: 1;
+      transform: skewX(-30deg);
+      transition: transform 0.5s ease;
+    }
+
+    &:hover::before {
+      transform: translateX(100%) skewX(-30deg); // Wave sweeps across
+    }
+
+    // Text and icon animation
+    span, svg {
+      position: relative;
+      z-index: 2; // Above background effects
+      transition: transform 0.4s ease, color 0.3s ease;
+    }
+
+    &:hover span {
+      transform: translateX(10px);
+      color: #f39c12; // Text turns golden
+    }
+
+    &:hover svg {
+      transform: scale(1.2); // Icon enlarges
+    }
+
+    // Overall hover transformation
+    &:hover {
+      background: linear-gradient(135deg, #800026, maroon); // Gradient shift
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+
+  // Entrance animation for each menu item
+  li:nth-child(1) {
+    animation: floatIn 0.8s ease-out forwards 0.1s;
+  }
+  li:nth-child(2) {
+    animation: floatIn 0.8s ease-out forwards 0.2s;
+  }
+  li:nth-child(3) {
+    animation: floatIn 0.8s ease-out forwards 0.3s;
+  }
+  li:nth-child(4) {
+    animation: floatIn 0.8s ease-out forwards 0.4s;
+  }
+
+
+// Keyframe for entrance float effect
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
 
 // Responsive design
-@media (max-width: 768px) {
-  .header__nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: cyan;
-    flex-direction: column;
-    align-items: center;
-    
-    ul {
-      flex-direction: column;
-      padding: 1rem 0;
+// Media Queries for Responsiveness
+@media (max-width: 1024px) {
+  .header {
+    padding: 0.8rem 1.5rem;
 
-      li {
-        margin: 0.5rem 0;
-      }
+    .header__logo img {
+      width: 230px; // Slightly smaller logo for tablet screens
+    }
+
+    .header__nav ul li {
+      font-size: 1rem; // Adjust font size for nav items
+    }
+
+    .menu_li li {
+      font-size: 1rem; // Maintain menu item font size for medium screens
+      padding: 12px 20px; // Adjust padding for better alignment
     }
   }
+}
 
-  .header__toggle {
-    display: flex;
+@media (max-width: 768px) {
+  .header {
+    padding: 0.5rem 1rem;
+
+    .header__logo img {
+      width: 200px; // Resize logo for smaller screens
+    }
+
+    .header__nav {
+      display: none; // Hide nav by default
+    }
+
+    .menu {
+      display: block; // Show menu icon for toggling
+    }
+
+    .menu_li li {
+      font-size: 0.9rem; // Adjust menu item font size
+      width: 100%; // Full width for better tapability
+      padding: 10px 15px; // Adjust padding
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .header {
+    padding: 0.5rem;
+
+    .header__logo img {
+      width: 200px; // Further shrink logo size for ultra-small screens
+    }
+
+    .menu_li li {
+      font-size: 0.8rem; // Further reduce menu item font size
+      padding: 8px 12px; // Compact padding for smaller space
+    }
   }
 }
