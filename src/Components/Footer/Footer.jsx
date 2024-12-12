@@ -32,7 +32,7 @@ const Footer = () => {
           <h3>Contact &nbsp; Us</h3>
           <ul>
             <li>Email: <a href="mailto:chetangandhrva@gmail.com?subject=Subject%20Here&body=Body%20Here">chetangandhrva@gmail.com</a></li>
-            <li>Phone: <a href='tel:9023476540'>+919023476540</a></li>
+            <li>Phone: <a href='tel:919023476540'>+919023476540</a></li>
             <li>Location: &nbsp; 75, New Heaven Complex, Nr. Ayurvedi Teen Rasta, Out side Panigate, Waghodia Road, Vadodara - 390019, Gujarat, India</li>
           </ul>
         </div>
@@ -48,6 +48,10 @@ const Footer = () => {
         <p>
           &copy; {new Date().getFullYear()} Vallabh Enterprises. Crafted with care and
           creativity.
+        </p>
+        <p>
+          Website Created By - Bhavisha Gandharva &nbsp; &nbsp;
+          📞Phone & WhatsApp: <a href='tel:918200913637'>+91-8200913637</a>
         </p>
       </div>
       
